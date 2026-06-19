@@ -105,7 +105,7 @@ class WifiAuditorScreen(ctk.CTkFrame):
         self.lbl_adapter_status.configure(text="Status: Scanning beacons...", text_color="#0ea5e9")
 
         def async_scan():
-            networks, insecure_count, is_mocked = scan_wifi_networks()
+            networks, insecure_count, is_mocked , security_score = scan_wifi_networks()
             self.after(0, lambda: self.finish_wifi_scan(networks, insecure_count, is_mocked))
 
         t = threading.Thread(target=async_scan)
