@@ -4,17 +4,17 @@ Welcome to the Antivirus & WiFi Security Auditor. This is a comprehensive Python
 
 ## Features
 
-* **File Scanner (Antivirus):** Deeply scans files and directories to detect and report potential threats or malware[cite: 2].
-* **WiFi Security Auditor:** Analyzes your active WiFi connections to identify security risks and weak configurations[cite: 2].
-* **System Cleaner:** Frees up valuable disk space by safely removing temporary files, cache, and system junk[cite: 2].
-* **Modern GUI:** A clean and interactive dashboard built for seamless navigation between the scanner, auditor, and cleaner[cite: 2].
-* **Audit Logging:** Automatically logs scan results and security events using a local SQLite database for future reference[cite: 2].
+- **File Scanner (Antivirus):** Deeply scans files and directories to detect and report potential threats or malware.
+- **WiFi Security Auditor:** Analyzes your active WiFi connections to identify security risks and weak configurations.
+- **System Cleaner:** Frees up valuable disk space by safely removing temporary files, cache, and system junk.
+- **Modern GUI:** A clean and interactive dashboard built for seamless navigation between the scanner, auditor, and cleaner.
+- **Audit Logging:** Automatically logs scan results and security events using a local SQLite database for future reference.
 
 ## Project Structure
 
-The project is organized into modular components for scalability and clean code architecture[cite: 2]:
+The project is organized into modular components for scalability and clean code architecture:
 
-```text
+```
 Antivirus-WiFi-Auditor/
 │
 ├── core/                  # Core logic and scanning algorithms
@@ -37,26 +37,36 @@ Antivirus-WiFi-Auditor/
 ├── config.py              # Global configuration variables
 ├── main.py                # Main entry point of the application
 └── README.md              # Project documentation
+```
 
-Getting Started
-Prerequisites
+## Getting Started
+
+### Prerequisites
+
 Make sure you have Python 3.x installed on your system. You will also need to install the required GUI libraries (e.g., CustomTkinter/Tkinter) if you haven't already.
 
-Installation
+### Installation
+
 Clone the repository:
 
-Bash
-   git clone [https://github.com/your-username/Antivirus-with-WiFi-Security-Auditor.git](https://github.com/your-username/Antivirus-with-WiFi-Security-Auditor.git)
-   cd Antivirus-with-WiFi-Security-Auditor
+```bash
+git clone https://github.com/cyberUsman/Antivirus-with-WiFi-Security-Auditor.git
+cd Antivirus-with-WiFi-Security-Auditor
+```
+
 Run the application:
+
 Launch the tool by executing the main script:
 
-Bash
-   python main.py
-Built With
-Python 3 - The core programming language.
+```bash
+python main.py
+```
 
-SQLite3 - For lightweight, local database management.
+## Built With
 
-Contributing
+- **Python 3** - The core programming language.
+- **SQLite3** - For lightweight, local database management.
+
+## Contributing
+
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.

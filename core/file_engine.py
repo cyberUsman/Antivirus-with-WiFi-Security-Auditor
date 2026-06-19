@@ -51,7 +51,9 @@ def scan_directory(target_path, scan_type="Full", progress_callback=None, cancel
         if progress_callback:
             progress_callback(file_path, files_scanned, threats_found, threat_info)
 
-    status = "Threats Blocked" if threats_found > 0 else "Clean"
+    # NOTE: detection only — no quarantine/removal action is taken on the file.
+    # Status reflects detection, not blocking, to avoid giving a false sense of security.
+    status = "Threats Detected" if threats_found > 0 else "Clean"
     if cancel_event and cancel_event.is_set():
         status = "Aborted"
         

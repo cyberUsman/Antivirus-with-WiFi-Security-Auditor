@@ -11,6 +11,13 @@ def get_temp_directory():
         temp_dir = os.path.expanduser(r'~\AppData\Local\Temp')
     return temp_dir
 
+def is_safe_temp_path(temp_dir):
+    """Safety check — refuse to clean a directory that doesn't look like a temp folder."""
+    if not temp_dir:
+        return False
+    safe_keywords = ['temp', 'tmp']
+    return any(keyword in temp_dir.lower() for keyword in safe_keywords)
+
 def scan_junk():
     temp_dir = get_temp_directory()
     if not os.path.exists(temp_dir):
@@ -37,7 +44,10 @@ def clean_junk(progress_callback=None, cancel_event=None):
     temp_dir = get_temp_directory()
     if not os.path.exists(temp_dir):
         return 0, 0
-        
+
+    if not is_safe_temp_path(temp_dir):
+        raise ValueError(f"Refusing to clean '{temp_dir}' — path does not appear to be a temp directory")
+
     deleted_count = 0
     freed_bytes = 0
     
