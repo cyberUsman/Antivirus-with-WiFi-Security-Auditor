@@ -13,7 +13,7 @@ def calculate_sha256(file_path):
             for byte_block in iter(lambda: f.read(4096), b""):
                 sha256_hash.update(byte_block)
         return sha256_hash.hexdigest()
-   except (PermissionError, FileNotFoundError, IsADirectoryError, OSError):
+    except (PermissionError, FileNotFoundError, IsADirectoryError, OSError):
         return None
 
 def scan_directory(target_path, scan_type="Full", progress_callback=None, cancel_event=None):
